@@ -48,8 +48,12 @@ pub fn restore(finder: &'static str) -> Result<()> {
 }
 
 #[cfg(any(freedesktop, target_os = "windows"))]
-pub fn list(all: bool) -> Result<()> {
-    let items = items(all)?;
+pub fn list(all: bool, since: Option<&str>, before: Option<&str>) -> Result<()> {
+    use crate::util::time;
+
+    let mut items = items(all)?;
+    time::retain_during(&mut items, since, before)?;
+
     render(&mut BufWriter::new(stdout()), &items)?;
     Ok(())
 }
@@ -66,9 +70,11 @@ pub fn delete(finder: &'static str, all: bool) -> Result<()> {
 }
 
 #[cfg(any(freedesktop, target_os = "windows"))]
-pub fn clean(all: bool) -> Result<()> {
-    let items = items(all)?;
+pub fn clean(all: bool, since: Option<&str>, before: Option<&str>) -> Result<()> {
+    use crate::util::time;
 
+    let mut items = items(all)?;
+    time::retain_during(&mut items, since, before)?;
     if items.is_empty() {
         return Ok(());
     }

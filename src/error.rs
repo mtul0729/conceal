@@ -13,6 +13,9 @@ pub enum Error {
     #[error("`{0}` not found")]
     FinderNotFound(&'static str),
 
+    #[error(transparent)]
+    Time(#[from] chrono_systemd_time::Error),
+
     #[error("{0}")]
     Msg(&'static str),
 }

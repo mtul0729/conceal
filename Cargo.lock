@@ -130,6 +130,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "chrono-systemd-time"
+version = "0.4.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1d7fac79ed1d945e99fa5317341637144dac019b9fc1fcda6a1f6aeb12a961dc"
+dependencies = [
+ "chrono",
+]
+
+[[package]]
 name = "clap"
 version = "4.5.35"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -200,6 +209,7 @@ version = "0.6.1"
 dependencies = [
  "cfg_aliases",
  "chrono",
+ "chrono-systemd-time",
  "clap",
  "clap_complete",
  "clap_complete_nushell",

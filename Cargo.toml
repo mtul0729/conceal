@@ -10,7 +10,14 @@ readme = "README.md"
 categories = ["command-line-utilities"]
 keywords = ["trash", "remove", "recycle", "freedesktop"]
 license = "MIT"
-include = ["src/**/*", "Cargo.toml", "Cargo.lock", "LICENSE*", "README.md", "build.rs"]
+include = [
+  "src/**/*",
+  "Cargo.toml",
+  "Cargo.lock",
+  "LICENSE*",
+  "README.md",
+  "build.rs",
+]
 
 [workspace.dependencies]
 clap = "4.5"
@@ -22,6 +29,7 @@ thiserror = "2"
 trash = "5.2"
 chrono = "0.4"
 cfg_aliases = "0.2"
+chrono-systemd-time = "0.4"
 
 [dependencies]
 clap = { workspace = true, features = ["derive", "env"] }
@@ -30,6 +38,7 @@ owo-colors = { workspace = true }
 thiserror = { workspace = true }
 trash = { workspace = true }
 chrono = { workspace = true }
+chrono-systemd-time = { workspace = true }
 
 [build-dependencies]
 clap = { workspace = true, features = ["derive", "env"] }

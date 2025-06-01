@@ -21,6 +21,16 @@ pub enum SubCommand {
         /// If not, only list the items discarded under current directory
         #[arg(long, short)]
         all: bool,
+
+        /// Clean items discarded since the point (including this point)
+        /// (<TIME> follows systemd.time specifications)
+        #[arg(long, short, value_name = "TIME")]
+        since: Option<String>,
+
+        /// Clean items discarded before the point (excluding this point)
+        /// (<TIME> follows systemd.time specifications)
+        #[arg(long, short, value_name = "TIME")]
+        before: Option<String>,
     },
 
     /// Restore items discarded from the current directory
@@ -48,6 +58,16 @@ pub enum SubCommand {
         /// If not, only clean the items discarded under current directory
         #[arg(long, short)]
         all: bool,
+
+        /// Clean items discarded since the point (including this point)
+        /// (<TIME> follows systemd.time specifications)
+        #[arg(long, short, value_name = "TIME")]
+        since: Option<String>,
+
+        /// Clean items discarded before the point (excluding this point)
+        /// (<TIME> follows systemd.time specifications)
+        #[arg(long, short, value_name = "TIME")]
+        before: Option<String>,
     },
 }
 
