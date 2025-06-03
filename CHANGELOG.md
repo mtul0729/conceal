@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.2] - 2025-06-03
+
+### Features
+
+- *(list/clean)* Support select items during
+
 ## [0.6.1] - 2025-04-11
 
 ### Bug Fixes
