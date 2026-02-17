@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.6.3] - 2026-02-17
+
+### Miscellaneous Tasks
+
+- Update dependencies
+
 ## [0.6.2] - 2025-06-03
 
 ### Features
